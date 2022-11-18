@@ -1,8 +1,7 @@
-<p>Hey</p>
 <script>
-alert(JSON.stringify(localStorage));
 var req = new XMLHttpRequest();
 req.onload = reqListener;
+// PartnerPage0 directory = 594e176f-9ee1-4eae-bb7c-e8636bf839ca
 req.open('post','https://admin.partnerpage.io/dashboard_user/get_listed/594e176f-9ee1-4eae-bb7c-e8636bf839ca/service_partner_directory');
 req.withCredentials = true;
 req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -11,7 +10,7 @@ req.send(JSON.stringify({
     "email": "testuser@user" + userNumber + ".com",
     "firstName": "John CORs",
     "lastName": "CORs",
-    "companyName": "Dalton CORs Co",
+    "companyName": "CORs Co",
     "password": "Pi.word" + Math.floor(Math.random() * 1000)
 }));
 
