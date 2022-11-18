@@ -2,9 +2,17 @@
 <script>
 var req = new XMLHttpRequest();
 req.onload = reqListener;
-req.open('get','https://admin.partnerpage.io/dashboard_vendor/directory/details/',true);
+req.open('post','https://admin.partnerpage.io/dashboard_user/get_listed/594e176f-9ee1-4eae-bb7c-e8636bf839ca/service_partner_directory');
 req.withCredentials = true;
-req.send();
+req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+userNumber = Math.floor(Math.random() * 1000)
+req.send(JSON.stringify({
+    "email": "testuser@user" + userNumber + ".com",
+    "firstName": "John CORs",
+    "lastName": "CORs",
+    "companyName": "Dalton CORs Co",
+    "password": "Pi.word" + Math.floor(Math.random() * 1000)
+}));
 
 function reqListener() {
     console.log(this.responseText);
